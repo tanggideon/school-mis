@@ -227,7 +227,7 @@ const AttendanceTable = () => {
         </DropdownMenu>
       </div>
       <div className="w-full">
-      <ScrollArea className="w-full h-[150px]">
+      <ScrollArea className="w-full h-full">
         <div className="rounded-md border">
           <Table>
             <TableHeader className="bg-gray-200">

@@ -1,5 +1,6 @@
-import { LoginForm } from "@/components/LoginForm";
+
 import Image from "next/image";
+import { LoginForm } from "./Teacher/(components)/LoginForm";
 
 export default function Home() {
   return (

@@ -42,7 +42,7 @@ const chartConfig = {
 export function AttendanceRadial() {
   return (
     <div className="flex-1">
-      // <ChartContainer >
+      {/* <ChartContainer > */}
           <RadialBarChart data={chartData} innerRadius={30} outerRadius={110} className="flex-1">
             <ChartTooltip
               cursor={false}

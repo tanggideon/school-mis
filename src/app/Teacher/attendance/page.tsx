@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { AttendanceBarChart } from "./(components)/BarChart";
-import { AttendanceRadial } from "./(components)/AttendanceRdial";
+import { AttendanceRadial } from "./(components)/AttendanceRadial";
 
 const page = () => {
   return (

@@ -1,18 +1,24 @@
-import React from 'react'
-import Sidebar from './(components)/sidebar'
-import Navbar from './(components)/navbar'
+import React from "react";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { cookies } from "next/headers"
+import Navbar from "@/components/navbar";
+import { AppSideBar } from "./(components)/AppSideBar";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const layout = async ({ children }: { children: React.ReactNode }) => {
+  const cookieStore = await cookies();
+  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
 
-    return (
+  return (
+    <SidebarProvider defaultOpen={true}>
         <div className={`flex bg-gray-50 text-gray-900 w-full min-h-screen`}>
-            <Sidebar />
-            <main className={`flex flex-col w-full h-full py-7 px-9 bg-gray-50`}> 
-                <Navbar/>
-                {children}
-            </main>
+        <AppSideBar />
+        <main className={`flex flex-col w-full h-full py-7 px-9 bg-gray-50 gap-5`}>
+            <Navbar />
+            {children}
+        </main>
         </div>
-    )
-}
+    </SidebarProvider>
+  );
+};
 
-export default layout
+export default layout;
